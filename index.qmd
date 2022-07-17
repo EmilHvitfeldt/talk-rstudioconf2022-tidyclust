@@ -1,0 +1,69 @@
+---
+title: "tidyclust - expanding tidymodels to clustering"
+format: 
+  revealjs:
+    theme: [default, style.scss]
+---
+
+## 
+
+------------------ opening hook
+
+![](images/classical-ml.jpeg)
+
+## 
+
+![](images/classical-ml-annotated.jpeg)
+
+## hello
+
+![](rawpixel/beach-branch.png)
+
+## My
+---
+------------------ governing idea
+
+The tidymodels has proved itself useful to do many machine learning tasks
+
+We are now taking the step into clustering
+
+introducing tidyclust (EARLY edition)
+
+The main thesis behind tidymodels is the modular and extensensible framework, where you learn a few verbs and functions and everything transfers natually once you want to try something else
+
+tidyclust provides an extension to that filosphopy
+
+------------------ WHY???!!
+
+Why another package?
+parsnip/workflows/tune were build with supervised learning models in mind
+were hard to extend to unsupervised learning without ripping up all the code
+
+show side-by-side of where tidyclust and tidymodels differs
+
+------------------ support 1
+
+Fitting a clustering model
+
++
+
+prediction + cluster assignment + clusters
+
+------------------ support 2
+
+Performance metrics
+
+------------------ support 3
+
+tuning
+
+------------------ Call to action
+
+Please use the package, give us feedback, feature requests
+https://github.com/EmilHvitfeldt/tidyclust
+
+------------------ Close
+
+Thanks you! 
+
+Links
