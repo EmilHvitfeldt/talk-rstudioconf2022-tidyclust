@@ -20,6 +20,13 @@ $presentation-heading-font-weight:	200;
 
 /*-- scss:rules --*/
 
+.title-background {
+  background-color: #ECEDEBCC;
+  box-shadow: 10px yellow;
+  box-shadow: 0px 0px 40px #ECEDEBCC;
+}
+
 .reveal p {
   font-weight: 100;
 }
+

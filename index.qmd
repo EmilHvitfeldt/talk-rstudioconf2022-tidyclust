@@ -6,11 +6,14 @@ format:
     height: 720
 ---
 
-::: r-fit-text
+## {background-iframe="boids/index.html"}
+
+
+::: {.r-fit-text .title-background}
 tidyclust
 :::
 
-::: r-fit-text
+::: {.r-fit-text .title-background}
 expanding tidymodels to clustering
 :::
 
