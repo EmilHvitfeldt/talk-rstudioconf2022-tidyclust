@@ -1,5 +1,7 @@
 /*-- scss:defaults --*/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 $theme-red: #730409;
 $theme-brown: #3A251C;
 $theme-green: #39663F;
@@ -12,6 +14,19 @@ $body-bg: $theme-white;
 $body-color: $theme-brown;
 $link-color: $theme-green;
 
-$code-block-font-size: 1em;
+$font-family-sans-serif: 'Roboto Slab', serif;
+$presentation-font-size-root: 50px;
+$presentation-heading-font-weight:	200;
 
 /*-- scss:rules --*/
+
+.title-background {
+  background-color: #ECEDEBCC;
+  box-shadow: 10px yellow;
+  box-shadow: 0px 0px 40px #ECEDEBCC;
+}
+
+.reveal p {
+  font-weight: 100;
+}
+

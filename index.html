@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="generator" content="quarto-0.9.399">
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.0.27">
 
-  <title>tidyclust - expanding tidymodels to clustering</title>
+  <title>index</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -18,13 +24,6 @@
     ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
-  <script src="index_files/libs/clipboard/clipboard.min.js"></script>
-  <script src="index_files/libs/quarto-html/tabby.min.js"></script>
-  <script src="index_files/libs/quarto-html/popper.min.js"></script>
-  <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-  <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-  <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
-  <link id="quarto-text-highlighting-styles" href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -314,51 +313,104 @@
     }
   </style>
 </head>
-<body>
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
-  <h1 class="title">tidyclust - expanding tidymodels to clustering</h1>
-</section>
 
-<section id="section" class="slide level2">
+<section id="section" class="slide level2" data-background-iframe="boids/index.html">
 <h2></h2>
-<p>—————— opening hook</p>
-
-<img data-src="images/classical-ml.jpeg" class="r-stretch"></section>
-
-<section id="hello" class="slide level2">
-<h2>hello</h2>
-
-<img data-src="rawpixel/beach-branch.png" class="r-stretch"></section>
-<section id="my" class="slide level2">
-<h2>My</h2>
+<div class="r-fit-text title-background">
+<p>tidyclust</p>
+</div>
+<div class="r-fit-text title-background">
+<p>expanding tidymodels to clustering</p>
+</div>
 </section>
-<section class="slide level2">
+<section id="section-1" class="slide level2">
+<h2></h2>
+<!--
+------------------ opening hook
+-->
 
-<p>—————— governing idea</p>
-<p>The tidymodels has proved itself useful to do many machine learning tasks</p>
-<p>We are now taking the step into clustering</p>
-<p>introducing tidyclust (EARLY edition)</p>
+<img data-src="images/classical-ml-new.png" class="r-stretch quarto-figure-center"></section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="images/classical-ml-annotated-new.png" class="r-stretch quarto-figure-center"></section>
+<section id="tidymodels" class="slide level2">
+<h2>tidymodels</h2>
+<!--
+------------------ governing idea
+-->
+<p>Modular</p>
+<p>Extensible</p>
+<p><img data-src="rawpixel/beach-branch.png" class="absolute" style="top: 0px; right: -250px; "></p>
+<!--
+Learn a few verbs -> opens your toolset a lot
+-->
+<aside class="notes">
 <p>The main thesis behind tidymodels is the modular and extensensible framework, where you learn a few verbs and functions and everything transfers natually once you want to try something else</p>
-<p>tidyclust provides an extension to that filosphopy</p>
-<p>—————— WHY???!!</p>
-<p>Why another package? parsnip/workflows/tune were build with supervised learning models in mind were hard to extend to unsupervised learning without ripping up all the code</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="introducing-tidyclust-early-edition" class="slide level2">
+<h2>introducing tidyclust (<strong>early</strong> edition)</h2>
+<!--
+------------------ WHY???!!
+-->
+</section>
+<section id="why-another-package" class="slide level2">
+<h2>Why another package?</h2>
+<p>parsnip + workflows + tune were build with supervised learning models in mind</p>
+</section>
+<section id="why-another-package-1" class="slide level2">
+<h2>Why another package?</h2>
 <p>show side-by-side of where tidyclust and tidymodels differs</p>
-<p>—————— support 1</p>
-<p>Fitting a clustering model</p>
-<ul>
-<li></li>
-</ul>
-<p>prediction + cluster assignment + clusters</p>
-<p>—————— support 2</p>
-<p>Performance metrics</p>
-<p>—————— support 3</p>
-<p>tuning</p>
-<p>—————— Call to action</p>
+</section>
+<section id="why-another-package-2" class="slide level2">
+<h2>Why another package?</h2>
+<p>Code is happening in tidyclust, should be as seamless as possible</p>
+<!--
+------------------ support 1
+-->
+</section>
+<section id="date-data" class="slide level2">
+<h2>Date data</h2>
+</section>
+<section id="fitting-a-clustering-model" class="slide level2">
+<h2>Fitting a clustering model</h2>
+</section>
+<section id="prediction-cluster-assignment-clusters" class="slide level2">
+<h2>prediction + cluster assignment + clusters</h2>
+<!--
+------------------ support 2
+-->
+</section>
+<section id="performance-metrics" class="slide level2">
+<h2>Performance metrics</h2>
+<!--
+------------------ support 3
+-->
+</section>
+<section id="tuning" class="slide level2">
+<h2>tuning</h2>
+<!--
+------------------ Call to action
+-->
 <p>Please use the package, give us feedback, feature requests https://github.com/EmilHvitfeldt/tidyclust</p>
-<p>—————— Close</p>
+<!--
+------------------ Close
+-->
 <p>Thanks you!</p>
 <p>Links</p>
 <div class="footer footer-default">
@@ -542,9 +594,9 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
@@ -578,6 +630,24 @@
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
       tabsets.forEach(function(tabset) {
         const tabby = new Tabby('#' + tabset.id);

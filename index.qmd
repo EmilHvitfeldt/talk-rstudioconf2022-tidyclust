@@ -1,68 +1,105 @@
 ---
-title: "tidyclust - expanding tidymodels to clustering"
 format: 
   revealjs:
     theme: [default, style.scss]
+    width: 1280
+    height: 720
 ---
+
+## {background-iframe="boids/index.html"}
+
+
+::: {.r-fit-text .title-background}
+tidyclust
+:::
+
+::: {.r-fit-text .title-background}
+expanding tidymodels to clustering
+:::
 
 ## 
 
+<!--
 ------------------ opening hook
+-->
 
-![](images/classical-ml.jpeg)
+![](images/classical-ml-new.png){fig-align="center"}
 
 ## 
 
-![](images/classical-ml-annotated.jpeg)
+![](images/classical-ml-annotated-new.png){fig-align="center"}
 
-## hello
+## tidymodels
 
-![](rawpixel/beach-branch.png)
-
-## My
----
+<!--
 ------------------ governing idea
+-->
 
-The tidymodels has proved itself useful to do many machine learning tasks
+Modular
 
-We are now taking the step into clustering
+Extensible
 
-introducing tidyclust (EARLY edition)
+![](rawpixel/beach-branch.png){.absolute top=0 right=-250}
 
+
+<!--
+Learn a few verbs -> opens your toolset a lot
+-->
+
+::: notes
 The main thesis behind tidymodels is the modular and extensensible framework, where you learn a few verbs and functions and everything transfers natually once you want to try something else
+:::
 
-tidyclust provides an extension to that filosphopy
+## introducing tidyclust (**early** edition)
 
+<!--
 ------------------ WHY???!!
+-->
 
-Why another package?
-parsnip/workflows/tune were build with supervised learning models in mind
-were hard to extend to unsupervised learning without ripping up all the code
+## Why another package?
+
+parsnip + workflows + tune were build with supervised learning models in mind
+
+## Why another package?
 
 show side-by-side of where tidyclust and tidymodels differs
 
+## Why another package?
+
+Code is happening in tidyclust, should be as seamless as possible
+
+<!--
 ------------------ support 1
+-->
 
-Fitting a clustering model
+## Date data
 
-+
+## Fitting a clustering model
 
-prediction + cluster assignment + clusters
+## prediction + cluster assignment + clusters
 
+<!--
 ------------------ support 2
+-->
 
-Performance metrics
+## Performance metrics
 
+<!--
 ------------------ support 3
+-->
 
-tuning
+## tuning
 
+<!--
 ------------------ Call to action
+-->
 
 Please use the package, give us feedback, feature requests
 https://github.com/EmilHvitfeldt/tidyclust
 
+<!--
 ------------------ Close
+-->
 
 Thanks you! 
 
