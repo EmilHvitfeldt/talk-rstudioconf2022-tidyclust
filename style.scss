@@ -45,3 +45,23 @@ $presentation-heading-font-weight:	200;
 .fontsize40 {
   font-size: 40px;
 }
+
+code span.fu {
+  color: darken($theme-apricot, 30%);
+}
+
+code span.at {
+  color: darken($theme-yellow, 30%);
+}
+
+code span.st {
+  color: $theme-green;
+}
+
+code span.dv {
+  color: $theme-red;
+}
+
+.reveal code {
+  color: darken($theme-apricot, 30%);
+}

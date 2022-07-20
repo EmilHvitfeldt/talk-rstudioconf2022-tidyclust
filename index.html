@@ -701,13 +701,13 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">extract_centroids</span>(kmeans_fit)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt; # A tibble: 5 × 7</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt;   .cluster    PC1    PC2    PC3     PC4    PC5</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt; 1 Cluster_1  2.17  3.46   1.32  -0.0701 -0.493</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; 2 Cluster_2 -1.98  3.33  -2.03  -1.01    1.04 </span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; 3 Cluster_3  1.34 -0.201  0.706  0.843   0.411</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; 4 Cluster_4  3.32 -2.85  -1.04  -0.256  -0.189</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 5 Cluster_5 -5.66 -1.51   0.776  0.280  -0.358</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt;   .cluster    PC1   PC2    PC3     PC4    PC5</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt; 1 Cluster_1  2.89 -2.42 -0.922 -0.0770 -0.190</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; 2 Cluster_2 -1.90  3.09 -1.99  -0.945   0.981</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; 3 Cluster_3  3.07 -2.22  5.27   1.09    5.06 </span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; 4 Cluster_4  1.91  2.69  1.20   0.130  -0.441</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 5 Cluster_5 -5.56 -1.41  0.658  0.458  -0.421</span></span>
 <span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt; # … with 1 more variable: PC6 &lt;dbl&gt;</span></span>
 <span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt; # ℹ Use `colnames()` to see all variable names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -736,7 +736,7 @@
 <span id="cb8-2"><a href="#cb8-2"></a><span class="co">#&gt; # A tibble: 1 × 3</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="co">#&gt;   .metric .estimator .estimate</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#&gt; 1 tot_wss standard       9258.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#&gt; 1 tot_wss standard       8986.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="performance-metrics-1" class="slide level2">
@@ -749,7 +749,7 @@
 <span id="cb9-4"><a href="#cb9-4"></a><span class="co">#&gt; # A tibble: 2 × 3</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a><span class="co">#&gt;   .metric .estimator .estimate</span></span>
 <span id="cb9-6"><a href="#cb9-6"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="co">#&gt; 1 tot_wss standard       9258.</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="co">#&gt; 1 tot_wss standard       8986.</span></span>
 <span id="cb9-8"><a href="#cb9-8"></a><span class="co">#&gt; 2 tot_sse standard      27539.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
