@@ -22,6 +22,70 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -327,28 +391,16 @@
 <p>expanding tidymodels to clustering</p>
 </div>
 </section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<!--
------------------- opening hook
--->
-
-<img data-src="images/classical-ml-new.png" class="r-stretch quarto-figure-center"></section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-
-<img data-src="images/classical-ml-annotated-new.png" class="r-stretch quarto-figure-center"></section>
-<section id="tidymodels" class="slide level2">
+<section id="tidymodels" class="slide level2" style="margin-left:200px;">
 <h2>tidymodels</h2>
-<!--
------------------- governing idea
--->
-<p>Modular</p>
-<p>Extensible</p>
-<p><img data-src="rawpixel/beach-branch.png" class="absolute" style="top: 0px; right: -250px; "></p>
-<!--
-Learn a few verbs -> opens your toolset a lot
--->
+<p><br></p>
+<ul>
+<li>Consistent</li>
+<li>Modular</li>
+<li>Extensible</li>
+</ul>
+<p><img data-src="images/tidymodels.png" class="absolute" style="top: 0px; right: 200px; "></p>
+<p><img data-src="rawpixel/peach-branch-3.png" class="absolute" style="top: 0px; left: -600px; "></p>
 <aside class="notes">
 <p>The main thesis behind tidymodels is the modular and extensensible framework, where you learn a few verbs and functions and everything transfers natually once you want to try something else</p>
 <style type="text/css">
@@ -363,56 +415,404 @@ Learn a few verbs -> opens your toolset a lot
           display:block!important;
       }</style></aside>
 </section>
-<section id="introducing-tidyclust-early-edition" class="slide level2">
-<h2>introducing tidyclust (<strong>early</strong> edition)</h2>
-<!--
------------------- WHY???!!
--->
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="images/classical-ml.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Illustration credit: <a href="https://vas3k.com/blog/machine_learning/" class="uri">https://vas3k.com/blog/machine_learning/</a></p>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="images/classical-ml-annotated.png" class="r-stretch quarto-figure-center"><div class="footer">
+<p>Illustration credit: <a href="https://vas3k.com/blog/machine_learning/" class="uri">https://vas3k.com/blog/machine_learning/</a></p>
+</div>
+</section>
+<section id="section-3" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="announcement-start">
+<div class="absolute" data-id="box1" data-auto-animate-delay="0" style="color:#E18534;top: 550px; left: -100px; ">
+<p>T</p>
+</div>
+<div class="absolute" data-id="box2" data-auto-animate-delay="0.1" style="color:#EFC93D;top: 0px; left: -50px; ">
+<p>I</p>
+</div>
+<div class="absolute" data-id="box3" data-auto-animate-delay="0.2" style="color:#E5883C;top: 600px; left: 50px; ">
+<p>D</p>
+</div>
+<div class="absolute" data-id="box4" data-auto-animate-delay="0.3" style="color:#B12824;top: -100px; left: 0px; ">
+<p>Y</p>
+</div>
+<div class="absolute" data-id="box5" data-auto-animate-delay="0.4" style="color:#3C674A;top: -200px; left: 300px; ">
+<p>C</p>
+</div>
+<div class="absolute" data-id="box6" data-auto-animate-delay="0.5" style="color:#95AB70;top: 550px; left: 400px; ">
+<p>L</p>
+</div>
+<div class="absolute" data-id="box7" data-auto-animate-delay="0.6" style="color:#DAC8B4;top: -100px; right: -50px; ">
+<p>U</p>
+</div>
+<div class="absolute" data-id="box8" data-auto-animate-delay="0.7" style="color:#355B34;top: 500px; left: 800px; ">
+<p>S</p>
+</div>
+<div class="absolute" data-id="box9" data-auto-animate-delay="0.8" style="color:#667F4E;top: 50px; right: -100px; ">
+<p>T</p>
+</div>
+</div>
+<p><img data-src="rawpixel/flower-branch.png" class="absolute" style="top: -150px; right: -400px; "></p>
+<p><img data-src="rawpixel/peach-branch-7.png" class="absolute" style="top: -450px; left: -400px; "></p>
+<p><img data-src="rawpixel/peach-branch-2.png" class="absolute" style="top: 400px; left: -200px; "></p>
+</section>
+<section id="section-4" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="announcement-end">
+<div class="absolute" data-id="box1" data-auto-animate-delay="0" style="top: 200px; left: 0%; ">
+<p>T</p>
+</div>
+<div class="absolute" data-id="box2" data-auto-animate-delay="0.1" style="top: 200px; left: 12%; ">
+<p>I</p>
+</div>
+<div class="absolute" data-id="box3" data-auto-animate-delay="0.2" style="top: 200px; left: 20%; ">
+<p>D</p>
+</div>
+<div class="absolute" data-id="box4" data-auto-animate-delay="0.3" style="top: 200px; left: 32%; ">
+<p>Y</p>
+</div>
+<div class="absolute" data-id="box5" data-auto-animate-delay="0.4" style="top: 200px; left: 43%; ">
+<p>C</p>
+</div>
+<div class="absolute" data-id="box6" data-auto-animate-delay="0.5" style="top: 200px; left: 56%; ">
+<p>L</p>
+</div>
+<div class="absolute" data-id="box7" data-auto-animate-delay="0.6" style="top: 200px; left: 66%; ">
+<p>U</p>
+</div>
+<div class="absolute" data-id="box8" data-auto-animate-delay="0.7" style="top: 200px; left: 79%; ">
+<p>S</p>
+</div>
+<div class="absolute" data-id="box9" data-auto-animate-delay="0.8" style="top: 200px; left: 90%; ">
+<p>T</p>
+</div>
+</div>
+<p><img data-src="rawpixel/flower-branch.png" class="absolute" style="top: -150px; right: -400px; "></p>
+<p><img data-src="rawpixel/peach-branch-7.png" class="absolute" style="top: -450px; left: -400px; "></p>
+<p><img data-src="rawpixel/peach-branch-2.png" class="absolute" style="top: 400px; left: -200px; "></p>
 </section>
 <section id="why-another-package" class="slide level2">
 <h2>Why another package?</h2>
-<p>parsnip + workflows + tune were build with supervised learning models in mind</p>
+<p><img data-src="rawpixel/fig-branch-1.png" class="absolute" style="top: 150px; left: 0px; "></p>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+<p>tidymodels was build with supervised models in mind</p>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>tidymodels</strong></p>
+<p><br></p>
+<div class="fontsize40">
+<p>Models have outcomes</p>
+<p><br></p>
+<p>Clearly defined <code>predict()</code></p>
+<p><br></p>
+<p>Easy to estimate performance</p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>tidyclust</strong></p>
+<p><br></p>
+<div class="fontsize40">
+<p>Models doesn’t have outcomes</p>
+<p><br></p>
+<p>Not clearly defined <code>predict()</code></p>
+<p><br></p>
+<p>No clear answer</p>
+</div>
+</div>
+</div>
+<p><img data-src="rawpixel/peach-single-1.png" class="absolute" style="height:300px;top: -150px; left: 1100px; "></p>
+<p><img data-src="rawpixel/peach-branch-6.png" class="absolute" style="top: 525px; left: 0px; "></p>
 </section>
 <section id="why-another-package-1" class="slide level2">
 <h2>Why another package?</h2>
-<p>show side-by-side of where tidyclust and tidymodels differs</p>
+<p><img data-src="rawpixel/peach-single-2.png" class="absolute" style="height:250px;top: 150px; left: 650px; "></p>
+<p><img data-src="rawpixel/peach-single-3.png" class="absolute" style="top: 350px; left: 0px; "></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>There is some reimplementation in tidyclust</p>
+</div><div class="column" style="width:50%;">
+
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+
+</div><div class="column" style="width:50%;">
+<p>Experience will be as seamless as possible</p>
+</div>
+</div>
 </section>
-<section id="why-another-package-2" class="slide level2">
-<h2>Why another package?</h2>
-<p>Code is happening in tidyclust, should be as seamless as possible</p>
-<!--
------------------- support 1
--->
+<section id="date-fruit-data" class="slide level2">
+<h2>Date Fruit Data</h2>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">glimpse</span>(dates)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#&gt; Rows: 898</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#&gt; Columns: 34</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">#&gt; $ area          &lt;dbl&gt; 422163, 338136, 526843, 41…</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#&gt; $ perimeter     &lt;dbl&gt; 2378.908, 2085.144, 2647.3…</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co">#&gt; $ major_axis    &lt;dbl&gt; 837.8484, 723.8198, 940.73…</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">#&gt; $ minor_axis    &lt;dbl&gt; 645.6693, 595.2073, 715.36…</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co">#&gt; $ eccentricity  &lt;dbl&gt; 0.6373, 0.5690, 0.6494, 0.…</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">#&gt; $ eqdiasq       &lt;dbl&gt; 733.1539, 656.1464, 819.02…</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="co">#&gt; $ solidity      &lt;dbl&gt; 0.9947, 0.9974, 0.9962, 0.…</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="co">#&gt; $ convex_area   &lt;dbl&gt; 424428, 339014, 528876, 41…</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="co">#&gt; $ extent        &lt;dbl&gt; 0.7831, 0.7795, 0.7657, 0.…</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co">#&gt; $ aspect_ratio  &lt;dbl&gt; 1.2976, 1.2161, 1.3150, 1.…</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co">#&gt; $ roundness     &lt;dbl&gt; 0.9374, 0.9773, 0.9446, 0.…</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co">#&gt; $ compactness   &lt;dbl&gt; 0.8750, 0.9065, 0.8706, 0.…</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co">#&gt; $ shapefactor_1 &lt;dbl&gt; 0.0020, 0.0021, 0.0018, 0.…</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co">#&gt; $ shapefactor_2 &lt;dbl&gt; 0.0015, 0.0018, 0.0014, 0.…</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co">#&gt; $ shapefactor_3 &lt;dbl&gt; 0.7657, 0.8218, 0.7580, 0.…</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co">#&gt; $ shapefactor_4 &lt;dbl&gt; 0.9936, 0.9993, 0.9968, 0.…</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co">#&gt; $ mean_rr       &lt;dbl&gt; 117.4466, 100.0578, 130.95…</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="co">#&gt; $ mean_rg       &lt;dbl&gt; 109.9085, 105.6314, 118.57…</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="co">#&gt; $ mean_rb       &lt;dbl&gt; 95.6774, 95.6610, 103.8750…</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="co">#&gt; $ std_dev_rr    &lt;dbl&gt; 26.5152, 27.2656, 29.7036,…</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="co">#&gt; $ std_dev_rg    &lt;dbl&gt; 23.0687, 23.4952, 24.6216,…</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="co">#&gt; $ std_dev_rb    &lt;dbl&gt; 30.1230, 28.1229, 33.9053,…</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="co">#&gt; $ skew_rr       &lt;dbl&gt; -0.5661, -0.2328, -0.7152,…</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="co">#&gt; $ skew_rg       &lt;dbl&gt; -0.0114, 0.1349, -0.1059, …</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="co">#&gt; $ skew_rb       &lt;dbl&gt; 0.6019, 0.4134, 0.9183, 1.…</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="co">#&gt; $ kurtosis_rr   &lt;dbl&gt; 3.2370, 2.6228, 3.7516, 5.…</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="co">#&gt; $ kurtosis_rg   &lt;dbl&gt; 2.9574, 2.6350, 3.8611, 8.…</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="co">#&gt; $ kurtosis_rb   &lt;dbl&gt; 4.2287, 3.1704, 4.7192, 8.…</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="co">#&gt; $ entropy_rr    &lt;dbl&gt; -59191263232, -34233065472…</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="co">#&gt; $ entropy_rg    &lt;dbl&gt; -50714214400, -37462601728…</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="co">#&gt; $ entropy_rb    &lt;dbl&gt; -39922372608, -31477794816…</span></span>
+<span id="cb1-35"><a href="#cb1-35"></a><span class="co">#&gt; $ al_ldaub4rr   &lt;dbl&gt; 58.7255, 50.0259, 65.4772,…</span></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="co">#&gt; $ al_ldaub4rg   &lt;dbl&gt; 54.9554, 52.8168, 59.2860,…</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="co">#&gt; $ al_ldaub4rb   &lt;dbl&gt; 47.8400, 47.8315, 51.9378,…</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="date-data" class="slide level2">
-<h2>Date data</h2>
+<section id="date-fruit-data-1" class="slide level2">
+<h2>Date Fruit Data</h2>
+<p><img data-src="rawpixel/peach-branch-1.png" class="absolute" style="top: -125px; left: 1000px; "></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="fitting-a-clustering-model" class="slide level2">
-<h2>Fitting a clustering model</h2>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>Specifying a clustering model</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">k_means</span>()</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co">#&gt; K Means Cluster Specification (partition)</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; </span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#&gt; Computational engine: stats</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="rawpixel/fruit-branch.png" class="absolute" style="top: 350px; left: 775px; "></p>
 </section>
-<section id="prediction-cluster-assignment-clusters" class="slide level2">
-<h2>prediction + cluster assignment + clusters</h2>
-<!--
------------------- support 2
--->
+<section id="section-7" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>Specifying a clustering model</p>
+</div>
+<p><img data-src="rawpixel/fruit-branch.png" class="absolute" style="top: 350px; left: 775px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">k_means</span>(<span class="at">num_clusters =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">set_engine</span>(<span class="st">"ClusterR"</span>, <span class="at">max_iters =</span> <span class="dv">1000</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co">#&gt; K Means Cluster Specification (partition)</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co">#&gt; </span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co">#&gt; Main Arguments:</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt;   num_clusters = 5</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; </span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; Engine-Specific Arguments:</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt;   max_iters = 1000</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; </span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; Computational engine: ClusterR</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>Specifying a clustering model</p>
+</div>
+<p><img data-src="rawpixel/fruit-branch.png" class="absolute" style="top: 350px; left: 775px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>kmeans_spec <span class="ot">&lt;-</span> <span class="fu">k_means</span>(<span class="at">num_clusters =</span> <span class="dv">5</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>rec_spec <span class="ot">&lt;-</span> <span class="fu">recipe</span>(<span class="sc">~</span>., <span class="at">data =</span> dates) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">step_normalize</span>(<span class="fu">all_numeric_predictors</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">step_pca</span>(<span class="fu">all_numeric_predictors</span>(), <span class="at">threshold =</span> <span class="fl">0.9</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>kmeans_wf <span class="ot">&lt;-</span> <span class="fu">workflow</span>(rec_spec, kmeans_spec)</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>kmeans_fit <span class="ot">&lt;-</span> <span class="fu">fit</span>(kmeans_wf, <span class="at">data =</span> dates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>cluster assignment + clusters + prediction</p>
+</div>
+<p><img data-src="rawpixel/peach-branch-4.png" class="absolute" style="top: 400px; left: 0px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">extract_cluster_assignment</span>(kmeans_fit)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt; # A tibble: 898 × 1</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;    .cluster </span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt;    &lt;fct&gt;    </span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;  1 Cluster_1</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt;  2 Cluster_2</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt;  3 Cluster_1</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt;  4 Cluster_2</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt;  5 Cluster_2</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt;  6 Cluster_2</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt;  7 Cluster_1</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt;  8 Cluster_2</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt;  9 Cluster_1</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="co">#&gt; 10 Cluster_1</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="co">#&gt; # … with 888 more rows</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>cluster assignment + clusters + prediction</p>
+</div>
+<p><img data-src="rawpixel/peach-branch-4.png" class="absolute" style="top: 400px; left: 0px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">extract_centroids</span>(kmeans_fit)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt; # A tibble: 5 × 7</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt;   .cluster    PC1    PC2    PC3     PC4    PC5</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt; 1 Cluster_1  2.17  3.46   1.32  -0.0701 -0.493</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; 2 Cluster_2 -1.98  3.33  -2.03  -1.01    1.04 </span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; 3 Cluster_3  1.34 -0.201  0.706  0.843   0.411</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; 4 Cluster_4  3.32 -2.85  -1.04  -0.256  -0.189</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 5 Cluster_5 -5.66 -1.51   0.776  0.280  -0.358</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt; # … with 1 more variable: PC6 &lt;dbl&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt; # ℹ Use `colnames()` to see all variable names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div class="r-fit-text">
+<p>cluster assignment + clusters + prediction</p>
+</div>
+<p><img data-src="rawpixel/peach-branch-4.png" class="absolute" style="top: 400px; left: 0px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">predict</span>(kmeans_fit, <span class="at">new_data =</span> dates[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>, ])</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="co">#&gt; # A tibble: 3 × 1</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#&gt;   .pred_cluster</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co">#&gt;   &lt;fct&gt;        </span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co">#&gt; 1 Cluster_2    </span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co">#&gt; 2 Cluster_2    </span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co">#&gt; 3 Cluster_2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="performance-metrics" class="slide level2">
 <h2>Performance metrics</h2>
-<!--
------------------- support 3
--->
+<p><img data-src="rawpixel/peach-branch-5.png" class="absolute" style="top: 400px; left: 0px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">tot_wss</span>(kmeans_fit, <span class="at">new_data =</span> dates)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#&gt; # A tibble: 1 × 3</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#&gt;   .metric .estimator .estimate</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#&gt; 1 tot_wss standard       9258.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="performance-metrics-1" class="slide level2">
+<h2>Performance metrics</h2>
+<p><img data-src="rawpixel/peach-branch-5.png" class="absolute" style="top: 400px; left: 0px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>my_metrics <span class="ot">&lt;-</span> <span class="fu">cluster_metric_set</span>(tot_wss, tot_sse)</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">my_metrics</span>(kmeans_fit, <span class="at">new_data =</span> dates)</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co">#&gt; # A tibble: 2 × 3</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="co">#&gt;   .metric .estimator .estimate</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="co">#&gt; 1 tot_wss standard       9258.</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="co">#&gt; 2 tot_sse standard      27539.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="tuning" class="slide level2">
 <h2>tuning</h2>
-<!--
------------------- Call to action
--->
-<p>Please use the package, give us feedback, feature requests https://github.com/EmilHvitfeldt/tidyclust</p>
-<!--
------------------- Close
--->
-<p>Thanks you!</p>
-<p>Links</p>
+<p><img data-src="rawpixel/fig-branch-2.png" class="absolute" style="top: -550px; left: 400px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>kmeans_spec <span class="ot">&lt;-</span> <span class="fu">k_means</span>(<span class="at">num_clusters =</span> <span class="fu">tune</span>())</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>kmeans_wf <span class="ot">&lt;-</span> kmeans_wf <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">update_model</span>(kmeans_spec)</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a>grid <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">num_clusters =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="fu">set.seed</span>(<span class="dv">2022</span>)</span>
+<span id="cb10-9"><a href="#cb10-9"></a>boots <span class="ot">&lt;-</span> <span class="fu">bootstraps</span>(dates, <span class="at">times =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tuning-1" class="slide level2">
+<h2>tuning</h2>
+<p><img data-src="rawpixel/fig-branch-2.png" class="absolute" style="top: -550px; left: 400px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>res <span class="ot">&lt;-</span> <span class="fu">tune_cluster</span>(</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  kmeans_wf,</span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="at">resamples =</span> boots,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="at">grid =</span> grid,</span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="at">metrics =</span> <span class="fu">cluster_metric_set</span>(tot_wss)</span>
+<span id="cb11-6"><a href="#cb11-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="tuning-2" class="slide level2">
+<h2>tuning</h2>
+<p><img data-src="rawpixel/fig-branch-2.png" class="absolute" style="top: -550px; left: 400px; "></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">collect_metrics</span>(res)</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co">#&gt; # A tibble: 10 × 7</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="co">#&gt;    num_clus…¹ .metric .esti…²   mean     n std_err</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co">#&gt;         &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="co">#&gt;  1          1 tot_wss standa… 27830.     5    119.</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="co">#&gt;  2          2 tot_wss standa… 18828.     5    815.</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="co">#&gt;  3          3 tot_wss standa… 12454.     5    206.</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="co">#&gt;  4          4 tot_wss standa… 10086.     5    207.</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="co">#&gt;  5          5 tot_wss standa…  8865.     5    190.</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co">#&gt;  6          6 tot_wss standa…  8236.     5    404.</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="co">#&gt;  7          7 tot_wss standa…  7211.     5    366.</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="co">#&gt;  8          8 tot_wss standa…  6498.     5    365.</span></span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="co">#&gt;  9          9 tot_wss standa…  5920.     5    355.</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="co">#&gt; 10         10 tot_wss standa…  5918.     5    338.</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a><span class="co">#&gt; # … with 1 more variable: .config &lt;chr&gt;, and</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="co">#&gt; #   abbreviated variable names ¹​num_clusters,</span></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="co">#&gt; #   ²​.estimator</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a><span class="co">#&gt; # ℹ Use `colnames()` to see all variable names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="thank-you" class="slide level2">
+<h2>Thank You!</h2>
+<ul>
+<li>Please use the package</li>
+<li>give us feedback</li>
+<li>make feature requests</li>
+</ul>
+<p><img data-src="images/tidyclust.png" class="absolute" style="height:400px;top: 0px; right: 50px; "></p>
+<p><a href="https://github.com/EmilHvitfeldt/tidyclust">github.com/EmilHvitfeldt/tidyclust</a></p>
 <div class="footer footer-default">
 
 </div>
@@ -628,6 +1028,48 @@ Learn a few verbs -> opens your toolset a lot
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

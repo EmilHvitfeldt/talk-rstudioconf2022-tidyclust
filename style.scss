@@ -15,7 +15,7 @@ $body-color: $theme-brown;
 $link-color: $theme-green;
 
 $font-family-sans-serif: 'Roboto Slab', serif;
-$presentation-font-size-root: 50px;
+$presentation-font-size-root: 64px;
 $presentation-heading-font-weight:	200;
 
 /*-- scss:rules --*/
@@ -26,7 +26,22 @@ $presentation-heading-font-weight:	200;
   box-shadow: 0px 0px 40px #ECEDEBCC;
 }
 
-.reveal p {
+.reveal p, li {
   font-weight: 100;
 }
 
+.reveal iframe {
+  pointer-events: none;
+}
+
+.announcement-start * {
+  font-size: 200px;
+}
+
+.announcement-end * {
+  font-size: 200px;
+}
+
+.fontsize40 {
+  font-size: 40px;
+}
