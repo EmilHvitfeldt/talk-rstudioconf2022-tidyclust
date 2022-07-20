@@ -65,3 +65,13 @@ code span.dv {
 .reveal code {
   color: darken($theme-apricot, 30%);
 }
+
+.red {
+  color: $theme-red;
+  font-weight: 300;
+}
+
+.green {
+  color: $theme-green;
+  font-weight: bold;
+}

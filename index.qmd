@@ -156,7 +156,7 @@ T
 :::
 
 ::: {.column width="50%"}
-tidymodels was build with supervised models in mind
+tidymodels was build with [supervised]{.red} models in mind
 :::
 :::
 
@@ -188,15 +188,15 @@ Easy to estimate performance
 <br>
 
 ::: fontsize40
-Models doesn't have outcomes
+Models [doesn't]{.green} have outcomes
 
 <br>
 
-Not clearly defined `predict()`
+[Not]{.green} clearly defined `predict()`
 
 <br>
 
-No clear answer
+[No]{.green} clear answer
 :::
 :::
 :::
@@ -311,7 +311,7 @@ kmeans_fit <- fit(kmeans_wf, data = dates)
 ## 
 
 ::: r-fit-text
-cluster assignment + clusters + prediction
+[cluster assignment]{.green} + clusters + prediction
 :::
 
 ![](rawpixel/peach-branch-4.png){.absolute top="400" left="0"}
@@ -323,7 +323,7 @@ extract_cluster_assignment(kmeans_fit)
 ## 
 
 ::: r-fit-text
-cluster assignment + clusters + prediction
+cluster assignment + [clusters]{.green} + prediction
 :::
 
 ![](rawpixel/peach-branch-4.png){.absolute top="400" left="0"}
@@ -335,7 +335,7 @@ extract_centroids(kmeans_fit)
 ## 
 
 ::: r-fit-text
-cluster assignment + clusters + prediction
+cluster assignment + clusters + [prediction]{.green}
 :::
 
 ![](rawpixel/peach-branch-4.png){.absolute top="400" left="0"}
