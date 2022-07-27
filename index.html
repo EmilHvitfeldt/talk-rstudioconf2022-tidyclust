@@ -601,9 +601,9 @@
 <p><strong>tidyclust</strong></p>
 <p><br></p>
 <div class="fontsize40">
-<p>Models <span class="green">doesn’t</span> have outcomes</p>
+<p>Models <span class="green">don’t</span> have outcomes</p>
 <p><br></p>
-<p><span class="green">Not</span> clearly defined <code>predict()</code></p>
+<p><span class="green">No</span> clearly defined <code>predict()</code></p>
 <p><br></p>
 <p><span class="green">No</span> clear answer</p>
 </div>
@@ -882,13 +882,13 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">extract_centroids</span>(kmeans_fit)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="co">#&gt; # A tibble: 5 × 7</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt;   .cluster    PC1    PC2    PC3     PC4    PC5</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt; 1 Cluster_1  2.17  3.46   1.32  -0.0701 -0.493</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; 2 Cluster_2 -5.66 -1.51   0.776  0.280  -0.358</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; 3 Cluster_3 -1.98  3.33  -2.03  -1.01    1.04 </span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; 4 Cluster_4  3.33 -2.82  -1.04  -0.257  -0.186</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 5 Cluster_5  1.30 -0.212  0.726  0.858   0.414</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">#&gt;   .cluster     PC1    PC2    PC3     PC4      PC5</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt; 1 Cluster_1  2.15   3.18   1.42   0.0640 -0.342  </span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; 2 Cluster_2 -5.66  -1.50   0.806  0.298  -0.361  </span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; 3 Cluster_3  3.80  -2.82  -0.786 -0.159  -0.00248</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; 4 Cluster_4  0.934 -0.774 -0.102  0.498   0.0410 </span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 5 Cluster_5 -1.99   3.37  -2.05  -1.02    1.06   </span></span>
 <span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt; # … with 1 more variable: PC6 &lt;dbl&gt;</span></span>
 <span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt; # ℹ Use `colnames()` to see all variable names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -943,7 +943,7 @@
 <span id="cb8-2"><a href="#cb8-2"></a><span class="co">#&gt; # A tibble: 1 × 3</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="co">#&gt;   .metric .estimator .estimate</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#&gt; 1 tot_wss standard       9258.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#&gt; 1 tot_wss standard       9329.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>18/23</p>
@@ -970,7 +970,7 @@
 <span id="cb9-4"><a href="#cb9-4"></a><span class="co">#&gt; # A tibble: 2 × 3</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a><span class="co">#&gt;   .metric .estimator .estimate</span></span>
 <span id="cb9-6"><a href="#cb9-6"></a><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="co">#&gt; 1 tot_wss standard       9258.</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a><span class="co">#&gt; 1 tot_wss standard       9329.</span></span>
 <span id="cb9-8"><a href="#cb9-8"></a><span class="co">#&gt; 2 tot_sse standard      27539.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
