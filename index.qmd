@@ -209,11 +209,11 @@ Easy to estimate performance
 <br>
 
 ::: fontsize40
-Models [doesn't]{.green} have outcomes
+Models [don't]{.green} have outcomes
 
 <br>
 
-[Not]{.green} clearly defined `predict()`
+[No]{.green} clearly defined `predict()`
 
 <br>
 
