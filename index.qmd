@@ -11,7 +11,7 @@ knitr:
     comment: "#>"
 ---
 
-##  {background-iframe="boids/index.html"}
+##  {background-iframe="boids_/index.html"}
 
 ::: {.r-fit-text .title-background}
 tidyclust
@@ -34,23 +34,32 @@ expanding tidymodels to clustering
 ![](rawpixel/peach-branch-3.png){.absolute top="0" left="-600"}
 
 ::: notes
+2/23
 The main thesis behind tidymodels is the modular and extensensible framework, where you learn a few verbs and functions and everything transfers natually once you want to try something else
 :::
 
 ## 
 
-![](images/classical-ml.png){fig-align="center"}
+![](images/classical-ml.png){fig-align="center" width="100%"}
 
 ::: footer
 Illustration credit: <https://vas3k.com/blog/machine_learning/>
 :::
 
+::: notes
+3/23
+:::
+
 ## 
 
-![](images/classical-ml-annotated.png){fig-align="center"}
+![](images/classical-ml-annotated.png){fig-align="center" width="100%"}
 
 ::: footer
 Illustration credit: <https://vas3k.com/blog/machine_learning/>
+:::
+
+::: notes
+4/23
 :::
 
 ##  {auto-animate="true" auto-animate-easing="ease-in-out"}
@@ -99,6 +108,10 @@ T
 
 ![](rawpixel/peach-branch-2.png){.absolute top="400" left="-200"}
 
+::: notes
+5/23
+:::
+
 ##  {auto-animate="true" auto-animate-easing="ease-in-out"}
 
 ::: announcement-end
@@ -145,6 +158,10 @@ T
 
 ![](rawpixel/peach-branch-2.png){.absolute top="400" left="-200"}
 
+::: notes
+6/23
+:::
+
 ## Why another package?
 
 ![](rawpixel/fig-branch-1.png){.absolute top="150" left="0"}
@@ -158,6 +175,10 @@ T
 ::: {.column width="50%"}
 tidymodels was build with [supervised]{.red} models in mind
 :::
+:::
+
+::: notes
+7/23
 :::
 
 ## 
@@ -205,6 +226,9 @@ Models [doesn't]{.green} have outcomes
 
 ![](rawpixel/peach-branch-6.png){.absolute top="525" left="0"}
 
+::: notes
+8/23
+:::
 
 ## Why another package?
 
@@ -231,6 +255,10 @@ Experience will be as seamless as possible
 :::
 :::
 
+::: notes
+9/23
+:::
+
 ## Date Fruit Data
 
 ```{r}
@@ -250,16 +278,25 @@ dates <- select(dates, -class)
 glimpse(dates)
 ```
 
+::: notes
+10/23
+
+Remember to mention scales of the data
+:::
+
 ## Date Fruit Data
 
 ![](rawpixel/peach-branch-1.png){.absolute top="-125" left="1000"}
-
 
 ```{r, dev.args = list(bg = 'transparent'),  fig.align = 'center'}
 #| echo: false
 corrr::correlate(dates) |>
   autoplot(low = "#EEC852", high = "#3A251C")
 ```
+
+::: notes
+11/23
+:::
 
 ## 
 
@@ -275,6 +312,10 @@ k_means()
 
 ![](rawpixel/fruit-branch.png){.absolute top="350" left="775"}
 
+::: notes
+12/23
+:::
+
 ## 
 
 ::: r-fit-text
@@ -287,6 +328,10 @@ Specifying a clustering model
 k_means(num_clusters = 5) %>%
   set_engine("ClusterR", max_iters = 1000)
 ```
+
+::: notes
+13/23
+:::
 
 ## 
 
@@ -308,6 +353,14 @@ kmeans_wf <- workflow(rec_spec, kmeans_spec)
 kmeans_fit <- fit(kmeans_wf, data = dates)
 ```
 
+::: notes
+14/23,  
+
+2 differences,  
+
+once fit we want to do a couple of things
+:::
+
 ## 
 
 ::: r-fit-text
@@ -319,6 +372,12 @@ kmeans_fit <- fit(kmeans_wf, data = dates)
 ```{r}
 extract_cluster_assignment(kmeans_fit)
 ```
+
+::: notes
+15/23,  
+
+3 major actions
+:::
 
 ## 
 
@@ -332,6 +391,10 @@ cluster assignment + [clusters]{.green} + prediction
 extract_centroids(kmeans_fit)
 ```
 
+::: notes
+16/23
+:::
+
 ## 
 
 ::: r-fit-text
@@ -344,8 +407,11 @@ cluster assignment + clusters + [prediction]{.green}
 predict(kmeans_fit, new_data = dates[4:6, ])
 ```
 
+::: notes
+17/23
+:::
 
-## Performance metrics
+## Metrics
 
 ![](rawpixel/peach-branch-5.png){.absolute top="400" left="0"}
 
@@ -353,7 +419,13 @@ predict(kmeans_fit, new_data = dates[4:6, ])
 tot_wss(kmeans_fit, new_data = dates)
 ```
 
-## Performance metrics
+::: notes
+18/23
+
+Total Within-Cluster-Sum of Squared Errors
+:::
+
+## Metrics
 
 ![](rawpixel/peach-branch-5.png){.absolute top="400" left="0"}
 
@@ -362,6 +434,12 @@ my_metrics <- cluster_metric_set(tot_wss, tot_sse)
 
 my_metrics(kmeans_fit, new_data = dates)
 ```
+
+::: notes
+19/23
+
+Total Error Sum of Squares
+:::
 
 ## tuning
 
@@ -379,6 +457,10 @@ set.seed(2022)
 boots <- bootstraps(dates, times = 5)
 ```
 
+::: notes
+20/23
+:::
+
 ## tuning
 
 ![](rawpixel/fig-branch-2.png){.absolute top="-550" left="400"}
@@ -392,6 +474,11 @@ res <- tune_cluster(
 )
 ```
 
+::: notes
+21/23
+:::
+
+
 ## tuning
 
 ![](rawpixel/fig-branch-2.png){.absolute top="-550" left="400"}
@@ -399,6 +486,11 @@ res <- tune_cluster(
 ```{r}
 collect_metrics(res)
 ```
+
+::: notes
+22/23
+:::
+
 
 ## Thank You!
 
@@ -409,3 +501,7 @@ collect_metrics(res)
 ![](images/tidyclust.png){.absolute top="0" right="50" style="height:400px;"}
 
 [github.com/EmilHvitfeldt/tidyclust](https://github.com/EmilHvitfeldt/tidyclust)
+
+::: notes
+23/23
+:::
