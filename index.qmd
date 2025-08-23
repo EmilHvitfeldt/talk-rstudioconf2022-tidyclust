@@ -9,6 +9,7 @@ knitr:
     echo: true
     collapse: true
     comment: "#>"
+pagetitle: tidyclust, expanding tidymodels to clustering
 ---
 
 ##  {background-iframe="boids_/index.html"}
